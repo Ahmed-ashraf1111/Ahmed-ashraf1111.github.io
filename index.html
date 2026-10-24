@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ahmed Ashraf | Full-Stack Developer</title>
+  <meta name="description" content="Portfolio of Ahmed Ashraf, a software engineer building full-stack web applications with React, Node.js and PostgreSQL.">
+  <meta name="theme-color" content="#0b0f17">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Header and navigation -->
+  <header class="site-header" id="top">
+    <nav class="nav container">
+      <a href="#top" class="logo">Ahmed<span>.</span></a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact" class="nav-cta">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <p class="eyebrow">Software Engineer</p>
+        <h1>Hi, I'm <span class="accent">Ahmed Ashraf</span>.<br>I build full-stack web applications.</h1>
+        <p class="hero-text">
+          I design and develop complete systems, from the database and REST API
+          to a clean, responsive interface. My work focuses on React, Node.js
+          and PostgreSQL, with real features like authentication, permissions
+          and multi-language support.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">View my work</a>
+          <a href="#contact" class="btn btn-ghost">Get in touch</a>
+        </div>
+
+        <ul class="hero-stats">
+          <li><strong>2</strong><span>Full-stack projects</span></li>
+          <li><strong>React + Node.js</strong><span>Main stack</span></li>
+          <li><strong>AR / EN</strong><span>RTL and LTR support</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div>
+          <p class="eyebrow">About me</p>
+          <h2>Turning requirements into working products</h2>
+        </div>
+        <div class="about-text">
+          <p>
+            I am a software engineer who enjoys building complete products from
+            scratch. I am comfortable working across the whole stack: analyzing
+            requirements, modeling the database, writing the API, building the
+            interface people actually use, and deploying it to a production
+            server.
+          </p>
+          <p>
+            I care about the details that make an application feel finished:
+            input validation, safe data handling, role-based access, and a
+            layout that works in both Arabic and English.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section section-alt" id="skills">
+      <div class="container">
+        <p class="eyebrow">Skills</p>
+        <h2>Technologies I work with</h2>
+
+        <div class="skills-grid">
+          <article class="card skill-card">
+            <h3>Frontend</h3>
+            <ul class="tags">
+              <li>React</li>
+              <li>Vite</li>
+              <li>JavaScript</li>
+              <li>HTML5</li>
+              <li>CSS3</li>
+              <li>Tailwind CSS</li>
+              <li>shadcn/ui</li>
+            </ul>
+          </article>
+
+          <article class="card skill-card">
+            <h3>Backend</h3>
+            <ul class="tags">
+              <li>Node.js</li>
+              <li>Express</li>
+              <li>REST APIs</li>
+              <li>JWT Authentication</li>
+              <li>Socket.IO</li>
+              <li>ASP.NET Core MVC</li>
+            </ul>
+          </article>
+
+          <article class="card skill-card">
+            <h3>Database</h3>
+            <ul class="tags">
+              <li>PostgreSQL</li>
+              <li>SQL</li>
+              <li>Schema design</li>
+              <li>Transactions</li>
+              <li>Multi-tenant design</li>
+            </ul>
+          </article>
+
+          <article class="card skill-card">
+            <h3>Tools</h3>
+            <ul class="tags">
+              <li>Git</li>
+              <li>GitHub</li>
+              <li>Postman</li>
+              <li>VS Code</li>
+              <li>pgAdmin</li>
+              <li>Production deployment</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section" id="projects">
+      <div class="container">
+        <p class="eyebrow">Projects</p>
+        <h2>Selected work</h2>
+
+        <!-- Project 1: Inventory System -->
+        <article class="project">
+          <div class="project-info">
+            <p class="project-label">Full-stack SaaS</p>
+            <h3>Inventory and Sales Management System</h3>
+            <p>
+              A multi-tenant system that lets a store manage products, suppliers,
+              customers, purchase invoices and sales invoices. Stock updates
+              automatically through database transactions, and invoices can be
+              voided with the stock effect reversed.
+            </p>
+            <ul class="feature-list">
+              <li>Multi-tenant design, every record scoped to a store</li>
+              <li>Admin and employee roles with 8 configurable permissions</li>
+              <li>Dashboard with sales trend chart, reports and CSV export</li>
+              <li>Arabic (RTL) and English (LTR) with full dark mode</li>
+              <li>Printable invoices with store logo and details</li>
+            </ul>
+            <ul class="tags">
+              <li>React</li>
+              <li>Vite</li>
+              <li>Tailwind CSS</li>
+              <li>shadcn/ui</li>
+              <li>Node.js</li>
+              <li>Express</li>
+              <li>PostgreSQL</li>
+              <li>JWT</li>
+            </ul>
+            <div class="project-links">
+              <a href="https://github.com/Ahmed-ashraf1111/inventory-sales-management-system" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">Source code</a>
+            </div>
+          </div>
+
+          <div class="gallery" data-gallery="inventory">
+            <button class="shot shot-main" data-full="images/inventory-1-dashboard.png" data-caption="Dashboard with stats and sales trend">
+              <img src="images/inventory-1-dashboard.png" alt="Inventory system dashboard with statistics and a sales trend chart" loading="lazy">
+            </button>
+            <button class="shot" data-full="images/inventory-2-products.png" data-caption="Products management">
+              <img src="images/inventory-2-products.png" alt="Inventory system products page" loading="lazy">
+            </button>
+            <button class="shot" data-full="images/inventory-3-suppliers.png" data-caption="Suppliers management">
+              <img src="images/inventory-3-suppliers.png" alt="Inventory system suppliers page" loading="lazy">
+            </button>
+            <button class="shot" data-full="images/inventory-4-customers.png" data-caption="Customers management">
+              <img src="images/inventory-4-customers.png" alt="Inventory system customers page" loading="lazy">
+            </button>
+            <button class="shot" data-full="images/inventory-5-sales.png" data-caption="Sales invoices">
+              <img src="images/inventory-5-sales.png" alt="Inventory system sales invoices page" loading="lazy">
+            </button>
+          </div>
+        </article>
+
+        <!-- Project 2: Alumni Portal -->
+        <article class="project project-reverse">
+          <div class="project-info">
+            <p class="project-label">Graduation project</p>
+            <h3>Capital University Alumni Portal</h3>
+            <p>
+              A bilingual portal that connects graduates of the university to
+              share knowledge, find opportunities and stay in touch. It includes
+              a public landing page, a graduate area and a full control panel
+              for administrators. Deployed to a university server.
+            </p>
+            <ul class="feature-list">
+              <li>My role: backend developer and system analyst, plus selected frontend features</li>
+              <li>Backend architecture, REST APIs, authentication and role-based access control</li>
+              <li>Alumni verification, digital document requests and real-time features with Socket.IO</li>
+              <li>AI content moderation integration, API testing and performance testing</li>
+              <li>Full deployment and production setup on the university server</li>
+            </ul>
+            <ul class="tags">
+              <li>React</li>
+              <li>Node.js</li>
+              <li>Express</li>
+              <li>PostgreSQL</li>
+              <li>Socket.IO</li>
+              <li>RBAC</li>
+            </ul>
+            <div class="project-links">
+              <a href="https://github.com/Maloka-119/Alumni-Portal-project-GP" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">Source code</a>
+            </div>
+          </div>
+
+          <div class="gallery" data-gallery="alumni">
+            <button class="shot shot-main" data-full="images/alumni-1-landing.png" data-caption="Public landing page">
+              <img src="images/alumni-1-landing.png" alt="Alumni portal landing page with the university campus" loading="lazy">
+            </button>
+            <button class="shot" data-full="images/alumni-2-communities.png" data-caption="Communities management">
+              <img src="images/alumni-2-communities.png" alt="Alumni portal control panel communities page" loading="lazy">
+            </button>
+            <button class="shot" data-full="images/alumni-3-roles.png" data-caption="Roles and permissions">
+              <img src="images/alumni-3-roles.png" alt="Alumni portal roles and permissions matrix" loading="lazy">
+            </button>
+            <button class="shot" data-full="images/alumni-4-profile.png" data-caption="Alumni profile">
+              <img src="images/alumni-4-profile.png" alt="Alumni portal graduate profile dialog" loading="lazy">
+            </button>
+            <button class="shot" data-full="images/alumni-5-user-dark.png" data-caption="Graduate area in dark mode">
+              <img src="images/alumni-5-user-dark.png" alt="Alumni portal graduate area in dark mode with Arabic interface" loading="lazy">
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Education and training -->
+    <section class="section section-alt" id="education">
+      <div class="container">
+        <p class="eyebrow">Education</p>
+        <h2>Education and training</h2>
+
+        <div class="timeline">
+          <article class="timeline-item">
+            <p class="timeline-date">Summer training</p>
+            <h3>Web Development Using .NET</h3>
+            <p class="timeline-place">Information Technology Institute (ITI)</p>
+            <p>
+              Intensive program covering web development with ASP.NET Core MVC,
+              built around weekly hands-on labs.
+            </p>
+          </article>
+
+          <article class="timeline-item">
+            <p class="timeline-date">Bachelor's degree</p>
+            <h3>Software Engineering</h3>
+            <p class="timeline-place">Faculty of Computers and Artificial Intelligence, Helwan University</p>
+            <p>
+              Software engineering degree with a focus on software design,
+              databases and quality assurance.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+      <div class="container contact-box">
+        <p class="eyebrow">Contact</p>
+        <h2>Let's work together</h2>
+        <p class="contact-text">
+          I am open to junior and full-stack developer opportunities. If you
+          have a role or a project in mind, send me a message.
+        </p>
+
+        <div class="contact-actions">
+          <a href="mailto:ahmed.ashraf.kandil2005@gmail.com" class="btn btn-primary">ahmed.ashraf.kandil2005@gmail.com</a>
+          <a href="https://github.com/Ahmed-ashraf1111" target="_blank" rel="noopener" class="btn btn-ghost">GitHub</a>
+          <a href="https://www.linkedin.com/in/ahmed-ashraf-10002b2a5" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year">2026</span> Ahmed Ashraf. All rights reserved.</p>
+      <a href="#top">Back to top</a>
+    </div>
+  </footer>
+
+  <!-- Image viewer (lightbox) -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close image">&times;</button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous image">&#8249;</button>
+    <figure class="lightbox-figure">
+      <img id="lightboxImg" src="" alt="">
+      <figcaption id="lightboxCaption"></figcaption>
+    </figure>
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next image">&#8250;</button>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
