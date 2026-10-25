@@ -3,32 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ahmed Ashraf | Full-Stack Developer</title>
-  <meta name="description" content="Portfolio of Ahmed Ashraf, a software engineer building full-stack web applications with React, Node.js and PostgreSQL.">
-  <meta name="theme-color" content="#0b0f17">
+  <title data-i18n="meta.title">Ahmed Ashraf | Full-Stack Developer</title>
+  <meta name="description" content="Portfolio of Ahmed Ashraf, a software engineer building full-stack web applications with React, Node.js and PostgreSQL." data-i18n-attr="content:meta.desc">
+  <meta name="theme-color" content="#080c14">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Link preview for LinkedIn, WhatsApp and other apps -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ahmed Ashraf | Full-Stack Developer">
+  <meta property="og:description" content="Portfolio of Ahmed Ashraf, a software engineer building full-stack web applications with React, Node.js and PostgreSQL.">
+  <meta property="og:url" content="https://ahmed-ashraf1111.github.io/">
+  <meta property="og:image" content="https://ahmed-ashraf1111.github.io/images/ahmed.jpg">
+  <meta name="twitter:card" content="summary">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+  <!-- Thin bar at the top that fills while scrolling -->
+  <div class="scroll-progress" id="scrollProgress"></div>
 
   <!-- Header and navigation -->
   <header class="site-header" id="top">
     <nav class="nav container">
       <a href="#top" class="logo">Ahmed<span>.</span></a>
 
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" data-i18n-attr="aria-label:nav.toggle">
         <span></span><span></span><span></span>
       </button>
 
       <ul class="nav-links" id="navLinks">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#contact" class="nav-cta">Contact</a></li>
+        <li><a href="#about" data-i18n="nav.about">About</a></li>
+        <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
+        <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+        <li><a href="#education" data-i18n="nav.education">Education</a></li>
+        <li><a href="#contact" class="nav-cta" data-i18n="nav.contact">Contact</a></li>
+        <!-- Language switch, main.js sets the label and the page direction -->
+        <li><button type="button" class="lang-toggle" id="langToggle" aria-label="Switch to Arabic" data-i18n-attr="aria-label:lang.switch">AR</button></li>
       </ul>
     </nav>
   </header>
@@ -38,23 +52,78 @@
     <!-- Hero -->
     <section class="hero">
       <div class="container hero-inner">
-        <p class="eyebrow">Software Engineer</p>
-        <h1>Hi, I'm <span class="accent">Ahmed Ashraf</span>.<br>I build full-stack web applications.</h1>
-        <p class="hero-text">
-          I design and develop complete systems, from the database and REST API
-          to a clean, responsive interface. My work focuses on React, Node.js
-          and PostgreSQL, with real features like authentication, permissions
-          and multi-language support.
-        </p>
-        <div class="hero-actions">
-          <a href="#projects" class="btn btn-primary">View my work</a>
-          <a href="#contact" class="btn btn-ghost">Get in touch</a>
+        <div class="hero-grid">
+
+          <!-- Left side: text and buttons -->
+          <div class="hero-copy">
+            <p class="status-badge">
+              <span class="status-dot"></span>
+              <span data-i18n="hero.status">Open to junior and full-stack opportunities</span>
+            </p>
+
+            <p class="hero-hello" data-i18n="hero.hello">Hello, I'm</p>
+            <h1 class="hero-name"><span class="accent" data-i18n="hero.name">Ahmed Ashraf</span></h1>
+            <p class="hero-role"><span data-i18n="hero.role">Software Engineer</span> <span class="role-pill">Full-Stack</span></p>
+
+            <p class="hero-text" data-i18n="hero.text">
+              I design and develop complete systems, from the database and REST API
+              to a clean, responsive interface. My work focuses on React, Node.js
+              and PostgreSQL, with real features like authentication, permissions
+              and multi-language support.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#projects" class="btn btn-primary" data-i18n="hero.cta1">View my work</a>
+              <a href="#contact" class="btn btn-ghost" data-i18n="hero.cta2">Get in touch</a>
+              <a href="Ahmed-Ashraf-CV.pdf" class="btn btn-ghost" download data-i18n="hero.cv">Download CV</a>
+            </div>
+
+            <div class="core-stack">
+              <span class="core-label" data-i18n="hero.coreStack">Core stack</span>
+              <ul class="tags">
+                <li>Node.js</li>
+                <li>Express</li>
+                <li>React</li>
+                <li>PostgreSQL</li>
+                <li>JWT</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Right side: photo, floating badges and the API card -->
+          <div class="hero-visual">
+            <div class="photo-frame">
+              <img class="photo" src="images/ahmed.jpg" alt="Portrait of Ahmed Ashraf" width="800" height="800" data-i18n-attr="alt:hero.photoAlt">
+            </div>
+
+            <span class="float-badge fb-1">Node.js</span>
+            <span class="float-badge fb-2">PostgreSQL</span>
+            <span class="float-badge fb-3">React</span>
+
+            <!-- main.js types this JSON, the plain text below is the fallback -->
+            <div class="api-card" aria-label="Sample API response about Ahmed" data-i18n-attr="aria-label:hero.apiAria">
+              <div class="api-bar">
+                <span class="api-method">GET</span>
+                <span class="api-path">/api/ahmed</span>
+                <span class="api-status">200 OK</span>
+              </div>
+              <pre class="api-body" id="apiBody">{
+  "name": "Ahmed Ashraf",
+  "role": "Software Engineer",
+  "stack": ["Node.js", "React", "PostgreSQL"],
+  "projects": 2,
+  "location": "Egypt",
+  "open_to_work": true
+}</pre>
+            </div>
+          </div>
+
         </div>
 
         <ul class="hero-stats">
-          <li><strong>2</strong><span>Full-stack projects</span></li>
-          <li><strong>React + Node.js</strong><span>Main stack</span></li>
-          <li><strong>AR / EN</strong><span>RTL and LTR support</span></li>
+          <li><strong>2</strong><span data-i18n="stats.projects">Full-stack projects</span></li>
+          <li><strong>React + Node.js</strong><span data-i18n="stats.stack">Main stack</span></li>
+          <li><strong>AR / EN</strong><span data-i18n="stats.rtl">RTL and LTR support</span></li>
         </ul>
       </div>
     </section>
@@ -63,35 +132,89 @@
     <section class="section" id="about">
       <div class="container about-grid">
         <div>
-          <p class="eyebrow">About me</p>
-          <h2>Turning requirements into working products</h2>
+          <p class="eyebrow" data-i18n="about.eyebrow">About me</p>
+          <h2 data-i18n="about.title">Turning requirements into working products</h2>
         </div>
         <div class="about-text">
-          <p>
+          <p data-i18n="about.p1">
             I am a software engineer who enjoys building complete products from
             scratch. I am comfortable working across the whole stack: analyzing
             requirements, modeling the database, writing the API, building the
             interface people actually use, and deploying it to a production
             server.
           </p>
-          <p>
+          <p data-i18n="about.p2">
             I care about the details that make an application feel finished:
             input validation, safe data handling, role-based access, and a
             layout that works in both Arabic and English.
           </p>
         </div>
       </div>
+
+      <!-- Three small cards that sum up how I work -->
+      <div class="container values-grid">
+        <article class="card value-card">
+          <div class="value-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 3 3 8l9 5 9-5-9-5z"/>
+              <path d="m3 13 9 5 9-5"/>
+              <path d="m3 17.5 9 5 9-5"/>
+            </svg>
+          </div>
+          <h3 data-i18n="about.v1.title">End-to-end ownership</h3>
+          <p data-i18n="about.v1.text">
+            From database modeling and REST APIs to the interface and the
+            production deployment, I take a feature through every layer.
+          </p>
+        </article>
+
+        <article class="card value-card">
+          <div class="value-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 3 4 6v6c0 4.5 3.2 8 8 9 4.8-1 8-4.5 8-9V6l-8-3z"/>
+              <path d="m9 12 2 2 4-4"/>
+            </svg>
+          </div>
+          <h3 data-i18n="about.v2.title">Secure by default</h3>
+          <p data-i18n="about.v2.text">
+            Input validation, safe data handling and role-based access are part
+            of the design, not something added at the end.
+          </p>
+        </article>
+
+        <article class="card value-card">
+          <div class="value-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="9"/>
+              <path d="M3 12h18"/>
+              <path d="M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/>
+            </svg>
+          </div>
+          <h3 data-i18n="about.v3.title">Bilingual, responsive UI</h3>
+          <p data-i18n="about.v3.text">
+            Interfaces that work in Arabic (RTL) and English (LTR), with dark
+            mode and layouts that hold up on phones.
+          </p>
+        </article>
+      </div>
     </section>
 
     <!-- Skills -->
     <section class="section section-alt" id="skills">
       <div class="container">
-        <p class="eyebrow">Skills</p>
-        <h2>Technologies I work with</h2>
+        <p class="eyebrow" data-i18n="skills.eyebrow">Skills</p>
+        <h2 data-i18n="skills.title">Technologies I work with</h2>
 
         <div class="skills-grid">
           <article class="card skill-card">
-            <h3>Frontend</h3>
+            <div class="skill-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="4" width="18" height="12" rx="2"/>
+                <path d="M8 20h8"/>
+                <path d="M12 16v4"/>
+              </svg>
+            </div>
+            <h3 data-i18n="skills.frontend">Frontend</h3>
             <ul class="tags">
               <li>React</li>
               <li>Vite</li>
@@ -104,7 +227,15 @@
           </article>
 
           <article class="card skill-card">
-            <h3>Backend</h3>
+            <div class="skill-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="7" rx="2"/>
+                <rect x="3" y="14" width="18" height="7" rx="2"/>
+                <path d="M7 6.5h.01"/>
+                <path d="M7 17.5h.01"/>
+              </svg>
+            </div>
+            <h3 data-i18n="skills.backend">Backend</h3>
             <ul class="tags">
               <li>Node.js</li>
               <li>Express</li>
@@ -116,7 +247,14 @@
           </article>
 
           <article class="card skill-card">
-            <h3>Database</h3>
+            <div class="skill-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <ellipse cx="12" cy="5" rx="8" ry="3"/>
+                <path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/>
+                <path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/>
+              </svg>
+            </div>
+            <h3 data-i18n="skills.database">Database</h3>
             <ul class="tags">
               <li>PostgreSQL</li>
               <li>SQL</li>
@@ -127,7 +265,12 @@
           </article>
 
           <article class="card skill-card">
-            <h3>Tools</h3>
+            <div class="skill-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+              </svg>
+            </div>
+            <h3 data-i18n="skills.tools">Tools</h3>
             <ul class="tags">
               <li>Git</li>
               <li>GitHub</li>
@@ -144,26 +287,26 @@
     <!-- Projects -->
     <section class="section" id="projects">
       <div class="container">
-        <p class="eyebrow">Projects</p>
-        <h2>Selected work</h2>
+        <p class="eyebrow" data-i18n="proj.eyebrow">Projects</p>
+        <h2 data-i18n="proj.title">Selected work</h2>
 
         <!-- Project 1: Inventory System -->
         <article class="project">
           <div class="project-info">
-            <p class="project-label">Full-stack SaaS</p>
-            <h3>Inventory and Sales Management System</h3>
-            <p>
+            <p class="project-label" data-i18n="inv.label">Full-stack SaaS</p>
+            <h3 data-i18n="inv.title">Inventory and Sales Management System</h3>
+            <p data-i18n="inv.desc">
               A multi-tenant system that lets a store manage products, suppliers,
               customers, purchase invoices and sales invoices. Stock updates
               automatically through database transactions, and invoices can be
               voided with the stock effect reversed.
             </p>
             <ul class="feature-list">
-              <li>Multi-tenant design, every record scoped to a store</li>
-              <li>Admin and employee roles with 8 configurable permissions</li>
-              <li>Dashboard with sales trend chart, reports and CSV export</li>
-              <li>Arabic (RTL) and English (LTR) with full dark mode</li>
-              <li>Printable invoices with store logo and details</li>
+              <li data-i18n="inv.f1">Multi-tenant design, every record scoped to a store</li>
+              <li data-i18n="inv.f2">Admin and employee roles with 8 configurable permissions</li>
+              <li data-i18n="inv.f3">Dashboard with sales trend chart, reports and CSV export</li>
+              <li data-i18n="inv.f4">Arabic (RTL) and English (LTR) with full dark mode</li>
+              <li data-i18n="inv.f5">Printable invoices with store logo and details</li>
             </ul>
             <ul class="tags">
               <li>React</li>
@@ -175,26 +318,97 @@
               <li>PostgreSQL</li>
               <li>JWT</li>
             </ul>
+
+            <!-- Case study, opens and closes without any JavaScript -->
+            <details class="case-study">
+              <summary data-i18n="case.summary">Case study</summary>
+
+              <div class="case-grid">
+                <div class="case-block">
+                  <h4 data-i18n="case.problem">Problem</h4>
+                  <p data-i18n="inv.problem">
+                    A store needs one place to manage products, suppliers,
+                    customers and invoices, and the stock numbers must stay
+                    correct every time an invoice is created or cancelled.
+                  </p>
+                </div>
+
+                <div class="case-block">
+                  <h4 data-i18n="case.solution">Solution</h4>
+                  <p data-i18n="inv.solution">
+                    A multi-tenant web app where every record belongs to a store.
+                    Purchase and sales invoices update the stock inside database
+                    transactions, and voiding an invoice reverses its stock effect.
+                  </p>
+                </div>
+
+                <div class="case-block case-wide">
+                  <h4 data-i18n="case.architecture">Architecture</h4>
+                  <ol class="arch-flow">
+                    <li>React + Vite</li>
+                    <li>Express REST API</li>
+                    <li>PostgreSQL</li>
+                  </ol>
+                  <p data-i18n="inv.arch">
+                    The interface uses Tailwind CSS and shadcn/ui. The API
+                    authenticates users with JWT, and all data is scoped to the
+                    store of the logged-in user.
+                  </p>
+
+                  <!-- Opens the database diagram in the lightbox -->
+                  <div class="cert-gallery" data-gallery="inventory-erd">
+                    <button class="shot cert-card arch-card" data-full="images/inventory-erd.svg" data-caption="Inventory system database: 11 tables and their relations" data-i18n-attr="data-caption:inv.erd.caption">
+                      <img src="images/inventory-erd.svg" alt="Entity relationship diagram of the inventory system database showing 11 tables and the relations between them" loading="lazy" data-i18n-attr="alt:inv.erd.alt">
+                      <span class="cert-text">
+                        <strong data-i18n="inv.erd.title">Database diagram</strong>
+                        <span data-i18n="inv.erd.sub">11 tables and their relations</span>
+                        <span class="cert-link" data-i18n="case.viewDiagram">View diagram</span>
+                      </span>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="case-block case-wide">
+                  <h4 data-i18n="case.challenges">Challenges</h4>
+                  <ul class="case-list">
+                    <li data-i18n="inv.c1">Keeping the data of each store separate in a multi-tenant design.</li>
+                    <li data-i18n="inv.c2">Building admin and employee roles with 8 configurable permissions.</li>
+                    <li data-i18n="inv.c3">Keeping stock correct when invoices are created or voided, solved with database transactions.</li>
+                  </ul>
+                </div>
+
+                <div class="case-block case-wide">
+                  <h4 data-i18n="case.result">Result</h4>
+                  <p data-i18n="inv.result">
+                    A complete system covering products, suppliers, customers,
+                    purchase and sales invoices, a dashboard with reports and CSV
+                    export, and printable invoices. The source code is available
+                    on GitHub.
+                  </p>
+                </div>
+              </div>
+            </details>
+
             <div class="project-links">
-              <a href="https://github.com/Ahmed-ashraf1111/inventory-sales-management-system" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">Source code</a>
+              <a href="https://github.com/Ahmed-ashraf1111/inventory-sales-management-system" target="_blank" rel="noopener" class="btn btn-ghost btn-sm" data-i18n="proj.source">Source code</a>
             </div>
           </div>
 
           <div class="gallery" data-gallery="inventory">
-            <button class="shot shot-main" data-full="images/inventory-1-dashboard.png" data-caption="Dashboard with stats and sales trend">
-              <img src="images/inventory-1-dashboard.png" alt="Inventory system dashboard with statistics and a sales trend chart" loading="lazy">
+            <button class="shot shot-main" data-full="images/inventory-1-dashboard.png" data-caption="Dashboard with stats and sales trend" data-i18n-attr="data-caption:inv.g1.cap">
+              <img src="images/inventory-1-dashboard.png" alt="Inventory system dashboard with statistics and a sales trend chart" loading="lazy" data-i18n-attr="alt:inv.g1.alt">
             </button>
-            <button class="shot" data-full="images/inventory-2-products.png" data-caption="Products management">
-              <img src="images/inventory-2-products.png" alt="Inventory system products page" loading="lazy">
+            <button class="shot" data-full="images/inventory-2-products.png" data-caption="Products management" data-i18n-attr="data-caption:inv.g2.cap">
+              <img src="images/inventory-2-products.png" alt="Inventory system products page" loading="lazy" data-i18n-attr="alt:inv.g2.alt">
             </button>
-            <button class="shot" data-full="images/inventory-3-suppliers.png" data-caption="Suppliers management">
-              <img src="images/inventory-3-suppliers.png" alt="Inventory system suppliers page" loading="lazy">
+            <button class="shot" data-full="images/inventory-3-suppliers.png" data-caption="Suppliers management" data-i18n-attr="data-caption:inv.g3.cap">
+              <img src="images/inventory-3-suppliers.png" alt="Inventory system suppliers page" loading="lazy" data-i18n-attr="alt:inv.g3.alt">
             </button>
-            <button class="shot" data-full="images/inventory-4-customers.png" data-caption="Customers management">
-              <img src="images/inventory-4-customers.png" alt="Inventory system customers page" loading="lazy">
+            <button class="shot" data-full="images/inventory-4-customers.png" data-caption="Customers management" data-i18n-attr="data-caption:inv.g4.cap">
+              <img src="images/inventory-4-customers.png" alt="Inventory system customers page" loading="lazy" data-i18n-attr="alt:inv.g4.alt">
             </button>
-            <button class="shot" data-full="images/inventory-5-sales.png" data-caption="Sales invoices">
-              <img src="images/inventory-5-sales.png" alt="Inventory system sales invoices page" loading="lazy">
+            <button class="shot" data-full="images/inventory-5-sales.png" data-caption="Sales invoices" data-i18n-attr="data-caption:inv.g5.cap">
+              <img src="images/inventory-5-sales.png" alt="Inventory system sales invoices page" loading="lazy" data-i18n-attr="alt:inv.g5.alt">
             </button>
           </div>
         </article>
@@ -202,20 +416,20 @@
         <!-- Project 2: Alumni Portal -->
         <article class="project project-reverse">
           <div class="project-info">
-            <p class="project-label">Graduation project</p>
-            <h3>Capital University Alumni Portal</h3>
-            <p>
+            <p class="project-label" data-i18n="alu.label">Graduation project</p>
+            <h3 data-i18n="alu.title">Capital University Alumni Portal</h3>
+            <p data-i18n="alu.desc">
               A bilingual portal that connects graduates of the university to
               share knowledge, find opportunities and stay in touch. It includes
               a public landing page, a graduate area and a full control panel
               for administrators. Deployed to a university server.
             </p>
             <ul class="feature-list">
-              <li>My role: backend developer and system analyst, plus selected frontend features</li>
-              <li>Backend architecture, REST APIs, authentication and role-based access control</li>
-              <li>Alumni verification, digital document requests and real-time features with Socket.IO</li>
-              <li>AI content moderation integration, API testing and performance testing</li>
-              <li>Full deployment and production setup on the university server</li>
+              <li data-i18n="alu.f1">My role: backend developer and system analyst, plus selected frontend features</li>
+              <li data-i18n="alu.f2">Backend architecture, REST APIs, authentication and role-based access control</li>
+              <li data-i18n="alu.f3">Alumni verification, digital document requests and real-time features with Socket.IO</li>
+              <li data-i18n="alu.f4">AI content moderation integration, API testing and performance testing</li>
+              <li data-i18n="alu.f5">Full deployment and production setup on the university server</li>
             </ul>
             <ul class="tags">
               <li>React</li>
@@ -225,26 +439,99 @@
               <li>Socket.IO</li>
               <li>RBAC</li>
             </ul>
+
+            <!-- Case study, opens and closes without any JavaScript -->
+            <details class="case-study">
+              <summary data-i18n="case.summary">Case study</summary>
+
+              <div class="case-grid">
+                <div class="case-block">
+                  <h4 data-i18n="case.problem">Problem</h4>
+                  <p data-i18n="alu.problem">
+                    Graduates lose touch with their university after they
+                    graduate, and the university has no simple way to stay
+                    connected with them. The gap between the two keeps growing.
+                  </p>
+                </div>
+
+                <div class="case-block">
+                  <h4 data-i18n="case.solution">Solution</h4>
+                  <p data-i18n="alu.solution">
+                    A bilingual portal that keeps graduates part of the
+                    university community: a public landing page, a graduate area
+                    to share knowledge and find opportunities, and a full
+                    control panel for administrators.
+                  </p>
+                </div>
+
+                <div class="case-block case-wide">
+                  <h4 data-i18n="case.architecture">Architecture</h4>
+                  <ol class="arch-flow">
+                    <li>React</li>
+                    <li>Express REST API</li>
+                    <li>PostgreSQL</li>
+                  </ol>
+                  <p data-i18n="alu.arch">
+                    Socket.IO adds the real-time features, role-based access
+                    control separates the different types of users, and an AI
+                    integration moderates the content.
+                  </p>
+
+                  <!-- Opens the architecture diagram in the lightbox -->
+                  <div class="cert-gallery" data-gallery="alumni-architecture">
+                    <button class="shot cert-card arch-card" data-full="images/alumni-architecture.svg" data-caption="Alumni Portal architecture: client, server, data and services" data-i18n-attr="data-caption:alu.arch.caption">
+                      <img src="images/alumni-architecture.svg" alt="Architecture diagram of the Alumni Portal showing the React client, the Express server and the data and services layer" loading="lazy" data-i18n-attr="alt:alu.arch.alt">
+                      <span class="cert-text">
+                        <strong data-i18n="alu.arch.title">Architecture diagram</strong>
+                        <span data-i18n="alu.arch.sub">Client, server, data and services</span>
+                        <span class="cert-link" data-i18n="case.viewDiagram">View diagram</span>
+                      </span>
+                    </button>
+                  </div>
+
+                </div>
+
+                <div class="case-block case-wide">
+                  <h4 data-i18n="case.challenges">Challenges</h4>
+                  <ul class="case-list">
+                    <li data-i18n="alu.c1">Role-based access control for several types of users.</li>
+                    <li data-i18n="alu.c2">Real-time features with Socket.IO.</li>
+                    <li data-i18n="alu.c3">Integrating AI content moderation into the platform.</li>
+                    <li data-i18n="alu.c4">Deploying and configuring the system on the university server.</li>
+                  </ul>
+                </div>
+
+                <div class="case-block case-wide">
+                  <h4 data-i18n="case.result">Result</h4>
+                  <p data-i18n="alu.result">
+                    A complete bilingual portal with a public landing page, a
+                    graduate area and an admin control panel, deployed to a
+                    university server. The source code is available on GitHub.
+                  </p>
+                </div>
+              </div>
+            </details>
+
             <div class="project-links">
-              <a href="https://github.com/Maloka-119/Alumni-Portal-project-GP" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">Source code</a>
+              <a href="https://github.com/Maloka-119/Alumni-Portal-project-GP" target="_blank" rel="noopener" class="btn btn-ghost btn-sm" data-i18n="proj.source">Source code</a>
             </div>
           </div>
 
           <div class="gallery" data-gallery="alumni">
-            <button class="shot shot-main" data-full="images/alumni-1-landing.png" data-caption="Public landing page">
-              <img src="images/alumni-1-landing.png" alt="Alumni portal landing page with the university campus" loading="lazy">
+            <button class="shot shot-main" data-full="images/alumni-1-landing.png" data-caption="Public landing page" data-i18n-attr="data-caption:alu.g1.cap">
+              <img src="images/alumni-1-landing.png" alt="Alumni portal landing page with the university campus" loading="lazy" data-i18n-attr="alt:alu.g1.alt">
             </button>
-            <button class="shot" data-full="images/alumni-2-communities.png" data-caption="Communities management">
-              <img src="images/alumni-2-communities.png" alt="Alumni portal control panel communities page" loading="lazy">
+            <button class="shot" data-full="images/alumni-2-communities.png" data-caption="Communities management" data-i18n-attr="data-caption:alu.g2.cap">
+              <img src="images/alumni-2-communities.png" alt="Alumni portal control panel communities page" loading="lazy" data-i18n-attr="alt:alu.g2.alt">
             </button>
-            <button class="shot" data-full="images/alumni-3-roles.png" data-caption="Roles and permissions">
-              <img src="images/alumni-3-roles.png" alt="Alumni portal roles and permissions matrix" loading="lazy">
+            <button class="shot" data-full="images/alumni-3-roles.png" data-caption="Roles and permissions" data-i18n-attr="data-caption:alu.g3.cap">
+              <img src="images/alumni-3-roles.png" alt="Alumni portal roles and permissions matrix" loading="lazy" data-i18n-attr="alt:alu.g3.alt">
             </button>
-            <button class="shot" data-full="images/alumni-4-profile.png" data-caption="Alumni profile">
-              <img src="images/alumni-4-profile.png" alt="Alumni portal graduate profile dialog" loading="lazy">
+            <button class="shot" data-full="images/alumni-4-profile.png" data-caption="Alumni profile" data-i18n-attr="data-caption:alu.g4.cap">
+              <img src="images/alumni-4-profile.png" alt="Alumni portal graduate profile dialog" loading="lazy" data-i18n-attr="alt:alu.g4.alt">
             </button>
-            <button class="shot" data-full="images/alumni-5-user-dark.png" data-caption="Graduate area in dark mode">
-              <img src="images/alumni-5-user-dark.png" alt="Alumni portal graduate area in dark mode with Arabic interface" loading="lazy">
+            <button class="shot" data-full="images/alumni-5-user-dark.png" data-caption="Graduate area in dark mode" data-i18n-attr="data-caption:alu.g5.cap">
+              <img src="images/alumni-5-user-dark.png" alt="Alumni portal graduate area in dark mode with Arabic interface" loading="lazy" data-i18n-attr="alt:alu.g5.alt">
             </button>
           </div>
         </article>
@@ -255,28 +542,56 @@
     <!-- Education and training -->
     <section class="section section-alt" id="education">
       <div class="container">
-        <p class="eyebrow">Education</p>
-        <h2>Education and training</h2>
+        <p class="eyebrow" data-i18n="edu.eyebrow">Education</p>
+        <h2 data-i18n="edu.title">Education and training</h2>
 
         <div class="timeline">
           <article class="timeline-item">
-            <p class="timeline-date">Summer training</p>
-            <h3>Web Development Using .NET</h3>
-            <p class="timeline-place">Information Technology Institute (ITI)</p>
-            <p>
-              Intensive program covering web development with ASP.NET Core MVC,
-              built around weekly hands-on labs.
+            <p class="timeline-date" data-i18n="edu.iti.date">Summer training, Jul - Aug 2026</p>
+            <h3 data-i18n="edu.iti.title">Web Development Using .NET</h3>
+            <p class="timeline-place" data-i18n="edu.iti.place">Information Technology Institute (ITI)</p>
+            <p class="timeline-desc" data-i18n="edu.iti.desc">
+              Intensive 144-hour program covering web development with
+              ASP.NET Core MVC, built around weekly hands-on labs.
             </p>
+
+            <!-- Course list taken from the official certificate -->
+            <ul class="tags">
+              <li>SQL Server (24 h)</li>
+              <li>C# Fundamentals (42 h)</li>
+              <li>Entity Framework (18 h)</li>
+              <li>ASP.NET MVC (36 h)</li>
+              <li>Generative AI and AI Agents (12 h)</li>
+              <li>Freelancing Fundamentals (12 h)</li>
+            </ul>
+
+            <!-- Opens the real certificate in the lightbox -->
+            <div class="cert-gallery" data-gallery="iti-certificate">
+              <button class="shot cert-card" data-full="images/iti-certificate.jpg" data-caption="ITI certificate: Web Development using .NET (144 hrs.)" data-i18n-attr="data-caption:edu.iti.cert.caption">
+                <img src="images/iti-certificate.jpg" alt="ITI certificate for the Web Development using .NET course, 144 hours" loading="lazy" data-i18n-attr="alt:edu.iti.cert.alt">
+                <span class="cert-text">
+                  <strong data-i18n="edu.iti.cert.title">ITI training certificate</strong>
+                  <span data-i18n="edu.iti.cert.sub">144 hours, 07 Jul to 09 Aug 2026</span>
+                  <span class="cert-link" data-i18n="case.viewCert">View certificate</span>
+                </span>
+              </button>
+            </div>
           </article>
 
           <article class="timeline-item">
-            <p class="timeline-date">Bachelor's degree</p>
-            <h3>Software Engineering</h3>
-            <p class="timeline-place">Faculty of Computers and Artificial Intelligence, Helwan University</p>
-            <p>
+            <p class="timeline-date" data-i18n="edu.hu.date">Bachelor's degree, Class of 2026</p>
+            <h3 data-i18n="edu.hu.title">Software Engineering</h3>
+            <p class="timeline-place" data-i18n="edu.hu.place">Faculty of Computers and Artificial Intelligence, Helwan University</p>
+            <p class="timeline-desc" data-i18n="edu.hu.desc">
               Software engineering degree with a focus on software design,
               databases and quality assurance.
             </p>
+
+            <!-- Final grade and GPA -->
+            <ul class="tags">
+              <li data-i18n="edu.hu.grade">Grade: Excellent</li>
+              <li data-i18n="edu.hu.gpa">GPA: 3.46</li>
+            </ul>
           </article>
         </div>
       </div>
@@ -285,17 +600,48 @@
     <!-- Contact -->
     <section class="section" id="contact">
       <div class="container contact-box">
-        <p class="eyebrow">Contact</p>
-        <h2>Let's work together</h2>
-        <p class="contact-text">
+        <p class="eyebrow" data-i18n="contact.eyebrow">Contact</p>
+        <h2 data-i18n="contact.title">Let's work together</h2>
+        <p class="contact-text" data-i18n="contact.text">
           I am open to junior and full-stack developer opportunities. If you
           have a role or a project in mind, send me a message.
         </p>
 
-        <div class="contact-actions">
-          <a href="mailto:ahmed.ashraf.kandil2005@gmail.com" class="btn btn-primary">ahmed.ashraf.kandil2005@gmail.com</a>
-          <a href="https://github.com/Ahmed-ashraf1111" target="_blank" rel="noopener" class="btn btn-ghost">GitHub</a>
-          <a href="https://www.linkedin.com/in/ahmed-ashraf-10002b2a5" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn</a>
+        <!-- Three contact cards: the email card takes the full row -->
+        <div class="contact-cards">
+          <a href="mailto:ahmed.ashraf.kandil2005@gmail.com" class="contact-card contact-card-wide">
+            <div class="value-icon contact-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                <path d="m22 7-10 7L2 7"/>
+              </svg>
+            </div>
+            <strong data-i18n="contact.email">Email</strong>
+            <span>ahmed.ashraf.kandil2005@gmail.com</span>
+          </a>
+
+          <a href="https://github.com/Ahmed-ashraf1111" target="_blank" rel="noopener" class="contact-card">
+            <div class="value-icon contact-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
+                <path d="M9 18c-4.51 2-5-2-7-2"/>
+              </svg>
+            </div>
+            <strong>GitHub</strong>
+            <span>Ahmed-ashraf1111</span>
+          </a>
+
+          <a href="https://www.linkedin.com/in/ahmed-ashraf-10002b2a5" target="_blank" rel="noopener" class="contact-card">
+            <div class="value-icon contact-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                <rect x="2" y="9" width="4" height="12"/>
+                <circle cx="4" cy="4" r="2"/>
+              </svg>
+            </div>
+            <strong>LinkedIn</strong>
+            <span data-i18n="contact.linkedinName">Ahmed Ashraf</span>
+          </a>
         </div>
       </div>
     </section>
@@ -304,20 +650,33 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>&copy; <span id="year">2026</span> Ahmed Ashraf. All rights reserved.</p>
-      <a href="#top">Back to top</a>
+      <p>&copy; <span id="year">2026</span> <span data-i18n="footer.rights">Ahmed Ashraf. All rights reserved.</span></p>
+
+      <!-- Opens the quick search palette, also works with Ctrl + K -->
+      <button type="button" class="palette-open" id="paletteOpen"><span data-i18n="palette.open">Quick search</span> <kbd>Ctrl K</kbd></button>
+
+      <a href="#top" data-i18n="footer.top">Back to top</a>
     </div>
   </footer>
 
+  <!-- Quick search palette (Ctrl + K), hidden until main.js opens it -->
+  <div class="palette" id="palette" hidden>
+    <div class="palette-box" role="dialog" aria-modal="true" aria-label="Quick navigation" data-i18n-attr="aria-label:palette.dialog">
+      <input type="text" class="palette-input" id="paletteInput" placeholder="Type to search..." autocomplete="off" aria-label="Search sections and links" data-i18n-attr="placeholder:palette.placeholder;aria-label:palette.inputLabel">
+      <ul class="palette-list" id="paletteList"></ul>
+      <p class="palette-hint" data-i18n="palette.hint">Up and Down to move, Enter to open, Esc to close</p>
+    </div>
+  </div>
+
   <!-- Image viewer (lightbox) -->
   <div class="lightbox" id="lightbox" aria-hidden="true">
-    <button class="lightbox-close" id="lightboxClose" aria-label="Close image">&times;</button>
-    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous image">&#8249;</button>
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close image" data-i18n-attr="aria-label:lightbox.close">&times;</button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous image" data-i18n-attr="aria-label:lightbox.prev">&#8249;</button>
     <figure class="lightbox-figure">
       <img id="lightboxImg" src="" alt="">
       <figcaption id="lightboxCaption"></figcaption>
     </figure>
-    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next image">&#8250;</button>
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next image" data-i18n-attr="aria-label:lightbox.next">&#8250;</button>
   </div>
 
   <script src="js/main.js"></script>
